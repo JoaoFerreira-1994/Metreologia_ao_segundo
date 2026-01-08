@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather — Real Time</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/funcoes.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <h1>⛅ Real-Time Weather</h1>
+  <br>
+
+  <div class="caixa busca">
+    <div class="input-group">
+      <input type="text" id="input_cidade" placeholder="Enter city..." autofocus>
+      <button id="btn_buscar" onclick="buscarMetereologia()">🔍 Search</button>
+      <button id="btn_voz" onclick="iniciarReconhecimentoVoz()" title="Click to speak the city name">🎤 Voice</button>
+    </div>
+    <div id="status_voz"></div>
+  </div>
+
+  <div id="display_meteorologia" class="caixa meteorologia">
+    <p id="aviso">Enter a city name or use voice command to start</p>
+  </div>
+
+  <div id="previsao" class="caixa previsao"></div>
+
+  <div id="dia_selecionado" class="caixa dia-selecionado" style="display:none;">
+    <!-- Selected day details will be rendered here -->
+  </div>
+
+</body>
+</html>

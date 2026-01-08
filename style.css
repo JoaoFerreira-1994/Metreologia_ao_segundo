@@ -1,0 +1,304 @@
+body{
+  background: linear-gradient(135deg, #1e3c72 10%, #859eb8 90%);
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.caixa{
+  background-color: rgba(255, 255, 255, 15%);
+  border-radius: 20px;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 15px auto;
+  min-width: 300px;
+  max-width: 500px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.caixa *{margin: 0px;}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.caixa input, button, select{
+  text-align: center;
+  background-color: rgba(255, 255, 255, 20%);
+  border: none;
+  padding: 12px 15px;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  flex: 1;
+  min-width: 100px;
+}
+
+.caixa input::placeholder {
+  color: rgb(200, 200, 200);
+}
+
+.caixa input[type="submit"], button{
+  border: 2px solid white;
+  text-transform: uppercase;
+  padding: 12px 15px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: rgba(100, 150, 255, 0.4);
+  color: white;
+  flex: 0;
+  min-width: auto;
+}
+
+.caixa input[type="submit"]:hover, button:hover{
+  background-color: rgba(100, 150, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.caixa input[type="submit"]:active, button:active{
+  transform: scale(0.95);
+}
+
+#status_voz {
+  color: #ffeb3b;
+  font-size: 14px;
+  margin-top: 10px;
+  min-height: 20px;
+  font-style: italic;
+}
+
+/* Display de Meteorologia */
+.meteorologia {
+  max-width: 600px;
+  padding: 30px;
+}
+
+#aviso {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.info-cidade {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 15px 0 10px 0;
+}
+
+.temperatura-principal {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ffeb3b;
+  margin: 15px 0;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.descricao-clima {
+  font-size: 18px;
+  color: #e0e0e0;
+  margin: 10px 0;
+  text-transform: capitalize;
+}
+
+.grid-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.info-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-label {
+  font-size: 12px;
+  color: #b0bec5;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.info-valor {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sensacao-termica {
+  color: #ffab91;
+}
+
+.umidade {
+  color: #81d4fa;
+}
+
+.vento {
+  color: #c8e6c9;
+}
+
+.pressao {
+  color: #f8bbd0;
+}
+
+/* Previsão */
+.previsao {
+  max-width: 600px;
+}
+
+.previsao-titulo {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 15px 0 15px 0;
+  color: #fff;
+}
+
+.dias-previsao {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+}
+
+.dia-previsao {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.dia-previsao:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.dia-previsao.selected {
+  background-color: rgba(255, 235, 59, 0.25);
+  border: 2px solid rgba(255, 235, 59, 0.6);
+  transform: scale(1.05);
+}
+
+.dia-nome {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.dia-temp {
+  font-size: 18px;
+  color: #ffeb3b;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.dia-desc {
+  font-size: 12px;
+  color: #b0bec5;
+  text-transform: capitalize;
+  margin: 5px 0;
+}
+
+/* Dia Selecionado */
+.dia-selecionado {
+  max-width: 600px;
+  border: 2px solid rgba(255, 235, 59, 0.5);
+  background-color: rgba(255, 235, 59, 0.08);
+  padding: 25px;
+}
+
+.dia-selecionado-titulo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #ffeb3b;
+}
+
+.dia-selecionado-icon {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.dia-selecionado-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.erro {
+  background-color: rgba(255, 0, 0, 0.2);
+  border: 2px solid #ff6b6b;
+  color: #ff8787;
+  padding: 15px;
+}
+
+.sucesso {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+::placeholder{color: rgb(175, 175, 175);}
+
+button:active{background-color: red;}
+
+
+input{
+  background-color: rgba(255, 255, 255, 25%);
+  text-align: center;
+  border: 0px;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+}
+input::placeholder{color: rgba(255, 255, 255, 0.156);}
+
+
+p.active{
+  border: 10px solid white;
+  background-color: rgba(255, 0, 0, 0.575);
+  text-align: right;
+  padding: 20px;
+  border-radius: 30px;
+  text-decoration: overline underline 2px solid white;
+}
+
+.d-none{display: none;}
+
+/* Responsividade*/
+
+@media (max-width: 400px) {
+
+  .input-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .input-group input {
+    flex: none;
+    flex-basis: 100%;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .input-group button {
+    flex: none;
+    flex-basis: calc(50% - 5px);
+  }
+}
